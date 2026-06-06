@@ -12,7 +12,7 @@ print(type(file))
 content = file.read()
 print(content)
 file.close()
-# 問他有沒有關掉“”管線
+# 問他有沒有關掉“管線”
 file.closed
 
 # 這樣寫file離開個區域直接關，節約資源
@@ -37,4 +37,11 @@ with open("考試分數_3年6班.csv", "r", encoding = "utf-8") as file:
     reader = csv.DictReader(file)
     for row in reader:
         print(row)
+        print(row["學生姓名"])# 抓每一個學生名字
 
+
+with open("考試分數_3年6班.csv", "r", encoding = "utf-8") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        if int(row["數學"]) > 90:
+            print(row["學生姓名"])
