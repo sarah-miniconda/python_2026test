@@ -100,7 +100,7 @@ def main():
         df : DataFrame = pd.DataFrame(data)
         #head 是實體方法      
         print(df.head())
-
+    # output_path 輸出路徑
         output_file = Path(__file__).with_name("youbike_report.pdf")
         export_to_pdf(df, output_file)
 
